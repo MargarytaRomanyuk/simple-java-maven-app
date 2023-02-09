@@ -46,12 +46,6 @@ pipeline {
             }
         }
         stage("build image") {
-            when {
-                expression {
-                    BRANCH_NAME == 'dev'
-                }
-            }                
-            //agent any
             steps {
                 script {
                     echo "building image"
@@ -79,10 +73,10 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'git-token', passwordVariable: 'PASSWD', usernameVariable: 'USER')])
                     {
                         sh 'git config --list'
-                        sh "git remote set-url origin https://${PASSWD}@github.com/MargarytaRomanyuk/Java-maven-app.git"
+                        sh "git remote set-url origin https://${PASSWD}@github.com/MargarytaRomanyuk/Somple-java-maven-app.git"
                         sh 'git add .'
                         sh 'git commit -m "CI: version bump" '
-                        sh 'git push origin HEAD:dev'
+                        sh 'git push origin HEAD:main'
                     }                    
                 }
             }
