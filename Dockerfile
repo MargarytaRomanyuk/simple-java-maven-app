@@ -9,11 +9,10 @@
 
 FROM tomcat:8.5.47-jdk8-openjdk
 
-EXPOSE 8080
+#EXPOSE 8080
 
-RUN mkdir /usr/app
-COPY ./target/mywebapp.war /usr/app
-WORKDIR /usr/app
+COPY ./target/mywebapp.war /usr/local/tomcat
+WORKDIR /usr/local/tomcat
 
 CMD java -jar ./target/mywebapp.war
 
