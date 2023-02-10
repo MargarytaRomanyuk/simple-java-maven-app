@@ -11,6 +11,7 @@ FROM tomcat:8.5.47-jdk8-openjdk
 
 EXPOSE 8080
 
+RUN mkdir /usr/app
 COPY ./target/mywebapp.war /usr/app
 WORKDIR /usr/app
 
