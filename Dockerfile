@@ -9,7 +9,9 @@
 
 FROM tomcat:8.5.47-jdk8-openjdk
 
-COPY ./target/mywebapp.war /usr/app/
+EXPOSE 8080
 
-CMD java -jar mywebapp.war
+№COPY ./target/mywebapp.war /usr/app/
+
+CMD java -jar ./target/mywebapp.war
 
