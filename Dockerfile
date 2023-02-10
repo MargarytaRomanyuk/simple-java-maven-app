@@ -11,7 +11,8 @@ FROM tomcat:8.5.47-jdk8-openjdk
 
 EXPOSE 8080
 
-COPY ./target/*.war /usr/app/
-WORKDIR /usr/app
+COPY ./target/*.war /usr/local/tomcat
+WORKDIR /usr/local/tomcat
 
 CMD java -jar *.war
+
