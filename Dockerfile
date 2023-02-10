@@ -11,6 +11,10 @@ FROM tomcat:8.5.47-jdk8-openjdk
 
 #ADD target/*.war /usr/local/tomcat/webapps/
 
-COPY ./target/*.war //usr/local/tomcat/webapps/
+COPY ./target/*.war /usr/local/tomcat/webapps/
+
+WORKDIR /usr/local/tomcat/webapps/
+
+CMD java -jar *.war
 
 
