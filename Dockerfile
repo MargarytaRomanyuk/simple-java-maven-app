@@ -9,10 +9,8 @@
 
 FROM tomcat:8.5.47-jdk8-openjdk
 
-EXPOSE 8080
+№ADD target/*.war /usr/local/tomcat/webapps/
 
-COPY ./target/*.war /usr/local/tomcat
-WORKDIR /usr/local/tomcat
+COPY ./target/*.war //usr/local/tomcat/webapps/
 
-CMD java -jar *.war
 
