@@ -1,11 +1,3 @@
-FROM tomcat:8.5.47-jdk8-openjdk
+FROM tomcat:8
 
-EXPOSE 8080
-
-COPY ./target/mywebapp.war /usr/local/tomcat/webapps/
-WORKDIR /usr/local/tomcat/webapps/
-
-CMD java -jar mywebapp.war
-
-
-
+ADD target/*.war /usr/local/tomcat/webapps/
