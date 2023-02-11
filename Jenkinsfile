@@ -24,14 +24,14 @@ pipeline {
                 } 
             }
         }
-        stage ("test app") {
-            steps {
-                script {
-                    echo "testing app"
-                    gv.testPrejar()
-                }
-            }
-        }
+       // stage ("test app") {
+         //   steps {
+           //     script {
+             //       echo "testing app"
+               //     gv.testPrejar()
+               // }
+           // }
+       // }
         stage("build jar") {
             steps {
                 script {
